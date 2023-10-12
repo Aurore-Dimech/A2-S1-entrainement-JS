@@ -19,9 +19,13 @@ let trajet = {
 
 while(trajet.feuxRouges > 0 && personnage.santeMentale > 0){
         if(trajet.radio != musiques[0]){
+            console.log(`La musiques jouée actuellement est ${trajet.radio} ! 
+Il reste ${trajet.feuxRouges} feux avant d'arriver.`)
             trajet.feuxRouges-- ;
             trajet.radio = musiques[Math.floor(Math.random()*musiques.length)]
         } else {
+            console.log(`La musiques jouée actuellement est ${trajet.radio} ! 
+Il reste ${trajet.feuxRouges} feux avant d'arriver.`)
             personnage.santeMentale--
             trajet.changement++
             trajet.feuxRouges--

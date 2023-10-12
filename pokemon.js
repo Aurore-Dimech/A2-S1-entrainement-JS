@@ -24,7 +24,7 @@ let raikou = new Pokemon('Raikou', 85, 75, 90, 0.5)
 while(hoOh.hp > 0 && raikou.hp > 0){
     if(hoOh.isLucky()) {
         hoOh.attackPokemon(raikou)
-        if (raikou.hp < 0)
+        if (raikou.hp <= 0)
         {
             console.log(`${raikou.name} est mort !`)
             break;
@@ -35,7 +35,7 @@ while(hoOh.hp > 0 && raikou.hp > 0){
 
     if(raikou.isLucky()) {
         raikou.attackPokemon(hoOh)
-        if (hoOh.hp < 0)
+        if (hoOh.hp <= 0)
         {
             console.log(`${hoOh.name} est mort !`)
             break;
