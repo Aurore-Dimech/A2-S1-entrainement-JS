@@ -72,7 +72,19 @@ while(mancheDef < 13 && mancheAtt < 13){
                 attaquants.splice(attaquants.indexOf(selectAttaquant), 1)
             }
 
-        } else if (smoke == null || smoke == false) {
+        } else if (smoke == true) {
+            if (gagnant <= 60){
+                console.log(`${selectAttaquant.nom} des attaquants tue ${selectDefenseur.nom} des défenseurs`)
+                defenseurs.splice(defenseurs.indexOf(selectDefenseur), 1)
+                if (selectAttaquant.nom === 'Omen'){
+                    smoke = Math.random() < 0.5
+                }
+            } else {
+                console.log(`${selectDefenseur.nom} des défenseurs tue ${selectAttaquant.nom} des attaquants`)
+                attaquants.splice(attaquants.indexOf(selectAttaquant), 1)
+            }
+
+        } else {
             if (gagnant <= 50){
                 if (selectAttaquant.nom === 'Omen'){
                     smoke = Math.random() < 0.5
@@ -84,17 +96,7 @@ while(mancheDef < 13 && mancheAtt < 13){
                 console.log(`${selectDefenseur.nom} des défenseurs tue ${selectAttaquant.nom} des attaquants`)
                 attaquants.splice(attaquants.indexOf(selectAttaquant), 1)
             }
-        } else {
-            if (gagnant <= 60){
-                console.log(`${selectAttaquant.nom} des attaquants tue ${selectDefenseur.nom} des défenseurs`)
-                defenseurs.splice(defenseurs.indexOf(selectDefenseur), 1)
-                if (selectAttaquant.nom === 'Omen'){
-                    smoke = Math.random() < 0.5
-                }
-            } else {
-                console.log(`${selectDefenseur.nom} des défenseurs tue ${selectAttaquant.nom} des attaquants`)
-                attaquants.splice(attaquants.indexOf(selectAttaquant), 1)
-            }
+
         }
     }
 

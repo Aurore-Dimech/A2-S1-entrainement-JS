@@ -70,6 +70,7 @@ while(mancheDef < 13 && mancheAtt < 13){
                 console.log(`${selectDefenseur.nom} des défenseurs tue ${selectAttaquant.nom} des attaquants`)
                 attaquants.splice(attaquants.indexOf(selectAttaquant), 1)
             }
+            
         } else {
             if (gagnant <= 50){
                 console.log(`${selectAttaquant.nom} des attaquants tue ${selectDefenseur.nom} des défenseurs`)
