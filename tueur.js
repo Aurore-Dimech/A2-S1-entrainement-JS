@@ -52,25 +52,25 @@ let morts = []
 
 while (survivants.length != 0 && tueur.pdv > 0) {
     let persoAttaque = survivants[Math.floor(Math.random() * survivants.length)];
-    console.log(`Jason attaque ${persoAttaque.personnage}`)
+    console.log(`${tueur.nom} attaque ${persoAttaque.personnage}`)
     let a = Math.random();
     if (a < persoAttaque.mortProb){
-        console.log(`${persoAttaque.personnage} est mort.e de peur devant Jason... RIP !`)
+        console.log(`${persoAttaque.personnage} est mort.e de peur devant ${tueur.nom}... RIP !`)
         morts.push(persoAttaque.personnage)
         survivants.splice(survivants.indexOf(persoAttaque), 1)
     } else if (a < persoAttaque.mortProb + persoAttaque.degatsProb) {
         tueur.pdv -= 10
         if (tueur.pdv > 0){
-            console.log(`${persoAttaque.personnage} marave Jason ! Ce dernier perd 10pv. Il lui reste donc ${tueur.pdv}pv`)
+            console.log(`${persoAttaque.personnage} marave ${tueur.nom} ! Ce dernier perd 10pv. Il lui reste donc ${tueur.pdv}pv`)
         } else {
-            console.log(`Jason se prend un finish de la part de ${persoAttaque.personnage} et est donc DCD :0`)
+            console.log(`${tueur.nom} se prend un finish de la part de ${persoAttaque.personnage} et est donc DCD :O`)
         }
     } else {
         tueur.pdv -= 15
         if (tueur.pdv > 0){
-            console.log(`${persoAttaque.personnage} se donne corps et âme pour donner un uppercut à Jason... GG (Jason -15pv ; ses pv sont à ${tueur.pdv}) mais RIP ${persoAttaque.personnage}`)
+            console.log(`${persoAttaque.personnage} se donne corps et âme pour donner un uppercut à ${tueur.nom}... GG (${tueur.nom} -15pv ; ses pv sont à ${tueur.pdv}) mais RIP ${persoAttaque.personnage}`)
         } else {
-            console.log(`Et c'est un double KO ! Jason est mort, mais à quel prix... RIP ${persoAttaque.personnage} !`)
+            console.log(`Et c'est un double KO ! ${tueur.nom} est mort, mais à quel prix... RIP ${persoAttaque.personnage} !`)
         }
         morts.push(persoAttaque.personnage)
         survivants.splice(survivants.indexOf(persoAttaque), 1)
@@ -78,7 +78,7 @@ while (survivants.length != 0 && tueur.pdv > 0) {
 }
 
 if (survivants.length == 0) {
-    console.log(`Jason a tué tout le monde :( 
+    console.log(`${tueur.nom} a tué tout le monde :( 
 sniff ${morts}`)
 } else {
     console.log(`Les survivants ont gagné, mais RIP à ${morts} `)
