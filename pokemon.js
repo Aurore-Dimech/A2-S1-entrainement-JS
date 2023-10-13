@@ -8,7 +8,7 @@ class Pokemon{
     }
 
     isLucky() {
-        return (Math.random() < this.luck);
+        return (Math.random()*100 < this.luck);
     }
     
     attackPokemon(pokemon) {
@@ -18,8 +18,8 @@ class Pokemon{
     }
 }
 
-let hoOh = new Pokemon('Ho-Oh', 100, 70, 106, 0.5)
-let raikou = new Pokemon('Raikou', 85, 75, 90, 0.5)
+let hoOh = new Pokemon('Ho-Oh', 100, 70, 106, 50)
+let raikou = new Pokemon('Raikou', 85, 75, 90, 50)
 
 while(hoOh.hp > 0 && raikou.hp > 0){
     if(hoOh.isLucky()) {
